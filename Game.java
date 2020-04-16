@@ -21,7 +21,9 @@ public class Game {
     public Game(int numOfEnemies) throws Exception
     {
         // populate the enemies arraylist with random enemies
-        enemies = new EnemyGenerator(numOfEnemies).returnEnemies();
+        EnemyGenerator enGen = new EnemyGenerator();
+        enGen.addRandomEnemies(numOfEnemies);
+        enemies = enGen.getEnemies();
         // new Hero instance, the player
         player = new Hero();
         // create new parser to use in the game

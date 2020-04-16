@@ -9,14 +9,23 @@ import java.util.Random;
 
 public class EnemyGenerator {
 
+    // ArrayList field of all enemies
     private ArrayList<Enemy> enemies;
 
-    public EnemyGenerator(int numOfEnemies) throws Exception
+    /**
+     * Constructor for EnemyGenerator
+     * @throws Exception
+     */
+    public EnemyGenerator() throws Exception
     {
         enemies = new ArrayList<>();
-        addRandomEnemies(numOfEnemies);
     }
 
+    /**
+     * addRandomEnemies metod, adds random enemies taken from the enemy.txt file
+     * @param numOfEnemies, the amount of enemies in the game instance
+     * @throws Exception
+     */
     public void addRandomEnemies(int numOfEnemies) throws Exception
     {
         // all enemies
@@ -41,8 +50,23 @@ public class EnemyGenerator {
         }
     }
 
-    public ArrayList<Enemy> returnEnemies()
+    /**
+     * Getter method for the enemies field
+     * @return
+     */
+    public ArrayList<Enemy> getEnemies()
     {
         return enemies;
+    }
+
+    /**
+     * Prints enemies' names and description separated by a comma.
+     */
+    public void printEnemies()
+    {
+        for (Enemy enemy : enemies)
+        {
+            System.out.println(enemy.getName() + ", " + enemy.getDescription());
+        }
     }
 }

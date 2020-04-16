@@ -1,3 +1,6 @@
+/**
+ * Kind of not needed, will probably remove later on.
+ */
 public enum Commands
 {
     QUIT("quit"), 
